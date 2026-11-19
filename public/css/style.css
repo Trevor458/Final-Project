@@ -1,0 +1,119 @@
+
+/* StudyFlow homepage styling */
+
+/* Basic settings for the whole website */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f8fc;
+    color: #26324a;
+}
+
+/* Navigation bar at the top */
+header {
+    background-color: white;
+    padding: 20px 8%;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Website name and temporary logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #5145a5;
+    text-decoration: none;
+}
+
+.logo-symbol {
+    background-color: #5145a5;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+/* Links to other pages */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #26324a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #5145a5;
+}
+
+/* Main welcome section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    max-width: 750px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #626b7d;
+    margin-bottom: 35px;
+}
+
+/* Main Add Task button */
+.btn {
+    display: inline-block;
+    background-color: #5145a5;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: #3e3583;
+}
+
+/* Secondary dashboard button */
+.secondary-btn {
+    display: inline-block;
+    background-color: white;
+    color: #5145a5;
+    padding: 13px 24px;
+    border: 1px solid #5145a5;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.secondary-btn:hover {
+    background-color: #eeecfa;
+}
+
+/* Footer at the bottom */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #626b7d;
+    font-size: 14px;
+}
