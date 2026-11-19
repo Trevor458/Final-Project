@@ -2,18 +2,22 @@
 /* StudyFlow homepage styling */
 
 /* Basic settings for the whole website */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f7f8fc;
-    color: #26324a;
+    background-color: #FAF9FF;
+    color: #302A40;
 }
 
-/* Navigation bar at the top */
+/* Navigation bar */
 header {
     background-color: white;
     padding: 20px 8%;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #EEE9FA;
 }
 
 nav {
@@ -24,25 +28,26 @@ nav {
     flex-wrap: wrap;
 }
 
-/* Website name and temporary logo */
+/* Website name and logo */
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 22px;
     font-weight: bold;
-    color: #5145a5;
+    color: #6956AD;
     text-decoration: none;
 }
 
 .logo-symbol {
-    background-color: #5145a5;
+    background-color: #6956AD;
     color: white;
     padding: 12px;
     border-radius: 12px;
+    font-size: 16px;
 }
 
-/* Links to other pages */
+/* Navigation links */
 .nav-links {
     display: flex;
     gap: 25px;
@@ -50,70 +55,152 @@ nav {
 }
 
 .nav-links a {
-    color: #26324a;
+    color: #514A63;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 15px;
 }
 
 .nav-links a:hover {
-    color: #5145a5;
+    color: #6956AD;
 }
 
 /* Main welcome section */
 .hero {
     text-align: center;
     padding: 100px 20px;
+    background-color: #EEE9FA;
+}
+
+.hero-content {
     max-width: 750px;
-    margin: auto;
+    margin: 0 auto;
+}
+
+/* Small welcome message */
+.welcome-label {
+    color: #6956AD;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .hero h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
+    font-size: 44px;
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #6956AD;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.7;
-    color: #626b7d;
-    margin-bottom: 35px;
+    color: #625B72;
 }
 
-/* Main Add Task button */
-.btn {
+/* Homepage buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn,
+.secondary-btn {
     display: inline-block;
-    background-color: #5145a5;
-    color: white;
     padding: 14px 25px;
     border-radius: 8px;
     text-decoration: none;
-    margin: 5px;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #6956AD;
+    color: white;
 }
 
 .btn:hover {
-    background-color: #3e3583;
+    background-color: #574493;
 }
 
-/* Secondary dashboard button */
 .secondary-btn {
-    display: inline-block;
     background-color: white;
-    color: #5145a5;
-    padding: 13px 24px;
-    border: 1px solid #5145a5;
-    border-radius: 8px;
-    text-decoration: none;
-    margin: 5px;
+    color: #6956AD;
+    border: 1px solid #6956AD;
 }
 
 .secondary-btn:hover {
-    background-color: #eeecfa;
+    background-color: #F7F4FF;
 }
 
-/* Footer at the bottom */
+/* Feature section */
+.features {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 28px;
+    margin-bottom: 35px;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Individual feature cards */
+.feature-card {
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #EEE9FA;
+    border-radius: 12px;
+    width: 280px;
+    text-align: left;
+}
+
+.feature-card h3 {
+    color: #6956AD;
+}
+
+.feature-card p {
+    color: #625B72;
+    line-height: 1.6;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 25px;
-    color: #626b7d;
-    font-size: 14px;
+    background-color: white;
+    border-top: 1px solid #EEE9FA;
+    color: #625B72;
+}
+
+/* Adjust the layout for smaller screens */
+@media (max-width: 600px) {
+    header {
+        padding: 20px;
+    }
+
+    .hero {
+        padding: 65px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .feature-card {
+        width: 100%;
+    }
 }
