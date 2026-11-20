@@ -1,0 +1,21 @@
+<section class="page wide">
+      <h2>Upcoming Tasks</h2>
+      <% if (upcoming.length === 0) { %>
+        <p>No tasks yet. <a href="/create">Add your first one.</a></p>
+      <% } else { %>
+      <table class="task-table">
+        <thead><tr><th>Task</th><th>Course</th><th>Priority</th><th>Due</th><th>Status</th></tr></thead>
+        <tbody>
+          <% upcoming.forEach(function (t) { %>
+          <tr>
+            <td><%= t.title %></td>
+            <td><%= t.course %></td>
+            <td><%= t.priority %></td>
+            <td><%= t.dueDisplay %></td>
+            <td class="due-<%= t.status %>"><%= t.statusLabel %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <% } %>
+    </section>

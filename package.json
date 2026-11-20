@@ -1,10 +1,11 @@
 {
   "name": "final-project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "StudyFlow is a web application designed to help students organize their academic tasks, manage assignments, and keep track of upcoming deadlines.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "start": "node bin/www",
+  "dev": "node --watch bin/www",
+  "test": "node --test"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/Trevor458/Final-Project#readme",
   "dependencies": {
+    "debug": "^4.4.3",
     "ejs": "^7.0.2",
     "express": "^5.3.0"
   }
