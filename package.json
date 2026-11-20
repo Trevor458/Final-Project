@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "StudyFlow is a web application designed to help students organize their academic tasks, manage assignments, and keep track of upcoming deadlines.",
   "scripts": {
-  "start": "node bin/www",
-  "dev": "node --watch bin/www",
-  "test": "node --test"
+    "start": "node bin/www",
+    "dev": "node --watch bin/www",
+    "test": "node --test"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/Trevor458/Final-Project#readme",
   "dependencies": {
+    "bootstrap": "^6.0.0-alpha.1",
     "debug": "^4.4.3",
     "ejs": "^7.0.2",
-    "express": "^5.3.0"
+    "express": "^5.3.0",
+    "nodemon": "^3.1.14"
   }
 }

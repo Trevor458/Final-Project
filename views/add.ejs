@@ -1,21 +1,53 @@
-<section class="page wide">
-  <h2>Upcoming Tasks</h2>
-  <% if (upcoming.length === 0) { %>
-    <p>No tasks yet. <a href="/create">Add your first one.</a></p>
-  <% } else { %>
-  <table class="task-table">
-    <thead><tr><th>Task</th><th>Course</th><th>Priority</th><th>Due</th><th>Status</th></tr></thead>
-    <tbody>
-      <% upcoming.forEach(function (t) { %>
-      <tr>
-        <td><%= t.title %></td>
-        <td><%= t.course %></td>
-        <td><%= t.priority %></td>
-        <td><%= t.dueDisplay %></td>
-        <td class="due-<%= t.status %>"><%= t.statusLabel %></td>
-      </tr>
-      <% }) %>
-    </tbody>
-  </table>
-  <% } %>
-</section>
+<%- include('partials/head') %>
+
+<main class="page">
+    <h1>Add a Task</h1>
+
+    <!-- Error messages from the server (only shown when something is wrong) -->
+    <% if (errors.length) { %>
+    <div class="alert" role="alert">
+        <strong>Please fix the following:</strong>
+        <ul>
+            <% errors.forEach(function (e) { %><li><%= e %></li><% }) %>
+        </ul>
+    </div>
+    <% } %>
+
+    <form method="POST" action="/create" class="task-form">
+        <label for="title">Task title *</label>
+        <input type="text" id="title" name="title" maxlength="100" required
+               value="<%= values.title || '' %>" placeholder="e.g. Essay draft">
+
+        <label for="course">Course</label>
+        <input type="text" id="course" name="course" maxlength="50"
+               value="<%= values.course || '' %>" placeholder="e.g. INFR3120">
+
+        <label for="description">Notes</label>
+        <textarea id="description" name="description" rows="4" maxlength="500"><%= values.description || '' %></textarea>
+
+        <div class="form-row">
+            <div>
+                <label for="dueDate">Due date *</label>
+                <input type="date" id="dueDate" name="dueDate" required
+                       min="<%= minDate %>" value="<%= values.dueDate || '' %>">
+            </div>
+            <div>
+                <label for="priority">Priority</label>
+                <select id="priority" name="priority">
+                    <% ['low', 'medium', 'high'].forEach(function (p) { %>
+                    <option value="<%= p %>" <%= values.priority === p ? 'selected' : '' %>>
+                        <%= p.charAt(0).toUpperCase() + p.slice(1) %>
+                    </option>
+                    <% }) %>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn">Add Task</button>
+            <a href="/tasks" class="secondary-btn">Cancel</a>
+        </div>
+    </form>
+</main>
+
+<%- include('partials/footer') %>

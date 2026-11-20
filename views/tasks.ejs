@@ -1,7 +1,9 @@
-<section class="page wide">
+<%- include('partials/head') %>
+<main>
+    <section class="page wide">
       <h2>Upcoming Tasks</h2>
       <% if (upcoming.length === 0) { %>
-        <p>No tasks yet. <a href="/create">Add your first one.</a></p>
+        <p>No tasks yet. <a href="/add">Add your first one.</a></p>
       <% } else { %>
       <table class="task-table">
         <thead><tr><th>Task</th><th>Course</th><th>Priority</th><th>Due</th><th>Status</th></tr></thead>
@@ -19,3 +21,5 @@
       </table>
       <% } %>
     </section>
+</main>
+<%- include('partials/footer') %>

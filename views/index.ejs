@@ -1,72 +1,65 @@
-<body>
-    <main>
-        <!-- Main welcome section -->
-        <section class="hero">
-            <div class="hero-content">
-                <span class="welcome-label">
-                    Your personal study companion
-                </span>
+<%- include('partials/head') %>
+<main>
+    <!-- Main welcome section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="welcome-label">
+                Your personal study companion
+            </span>
 
-                <h1>
-                    Make studying easier with
-                    <span>StudyFlow</span>
-                </h1>
+            <h1>
+                Make studying easier with
+                <span>StudyFlow</span>
+            </h1>
 
+            <p>
+                Organize your assignments, keep track of
+                deadlines, and manage your schoolwork
+                in one simple place.
+            </p>
+
+            <!-- Main homepage buttons -->
+            <div class="hero-buttons">
+                <a href="/add" class="btn">
+                    + Add a Task
+                </a>
+
+                <a href="/tasks" class="secondary-btn">
+                    View My Tasks
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brief introduction to the features -->
+    <section class="features">
+        <h2>Why use StudyFlow?</h2>
+
+        <div class="feature-container">
+            <div class="feature-card">
+                <h3>Organize Tasks</h3>
                 <p>
-                    Organize your assignments, keep track of
-                    deadlines, and manage your schoolwork
-                    in one simple place.
+                    Keep your assignments and school
+                    tasks together in one place.
                 </p>
-
-                <!-- Main homepage buttons -->
-                <div class="hero-buttons">
-                    <a href="/create" class="btn">
-                        + Add a Task
-                    </a>
-
-                    <a href="/dashboard" class="secondary-btn">
-                        View My Tasks
-                    </a>
-                </div>
             </div>
-        </section>
 
-        <!-- Brief introduction to the features -->
-        <section class="features">
-            <h2>Why use StudyFlow?</h2>
-
-            <div class="feature-container">
-                <div class="feature-card">
-                    <h3>Organize Tasks</h3>
-                    <p>
-                        Keep your assignments and school
-                        tasks together in one place.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Track Deadlines</h3>
-                    <p>
-                        Stay aware of upcoming deadlines
-                        and plan your work ahead.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <h3>Stay Focused</h3>
-                    <p>
-                        Manage your workload and focus
-                        on what needs to be done.
-                    </p>
-                </div>
+            <div class="feature-card">
+                <h3>Track Deadlines</h3>
+                <p>
+                    Stay aware of upcoming deadlines
+                    and plan your work ahead.
+                </p>
             </div>
-        </section>
-    </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>StudyFlow - Student Task Manager</p>
-    </footer>
-
-</body>
-
+            <div class="feature-card">
+                <h3>Stay Focused</h3>
+                <p>
+                    Manage your workload and focus
+                    on what needs to be done.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+<%- include('partials/footer') %>
