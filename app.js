@@ -1,27 +1,27 @@
 
-/*
- * StudyFlow - Main server file
- * This file starts our website and displays the homepage.
- */
-
 const express = require("express");
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Use EJS to display our HTML pages.
+// Set up EJS
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-// Tell Express where to find CSS and images.
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// Display the homepage when someone visits the website.
-app.get("/", (req, res) => {
-    res.render("index");
-});
 
-// Start the website server.
-app.listen(PORT, () => {
-    console.log(`StudyFlow is running on port ${PORT}`);
-});
+// Import the Express Generator routes
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+
+// Connect the routes
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
+
+
+// Export the app for Express Generator's bin/www
+module.exports = app;
