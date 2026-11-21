@@ -445,3 +445,18 @@ td button {
         margin: 25px 0;
     }
 }
+
+
+
+/* Keeps the footer at the bottom of the page
+   The body is at least as tall as the screen, and the footer pushes itself
+   down with auto margin, so it stays at the bottom even when a page has little content. */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
