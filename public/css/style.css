@@ -204,3 +204,244 @@ footer {
         width: 100%;
     }
 }
+
+
+
+
+
+
+
+/* Add Task and My Tasks page styling */
+
+/* Form box
+   The form sits in a white card in the middle of the page
+   using the same border and rounded corners as the feature cards. */
+form {
+    background-color: white;
+    border: 1px solid #EEE9FA;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 520px;
+    margin: 40px auto;
+    box-shadow: 0 4px 16px rgba(105, 86, 173, 0.08);
+}
+
+/* Labels above each field (Task title, Due date, Priority) */
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 18px 0 6px;
+}
+
+/* No extra space above the first label so it lines up with the top of the card */
+label:first-child {
+    margin-top: 0;
+}
+
+/* Text boxes, date picker and dropdown
+   width 100% makes every field fill the card so they all line up */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D5CDEB;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: white;
+    color: #302A40;
+}
+
+/* Radio buttons and checkboxes should stay small, not stretch to 100% */
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+
+/* Purple outline when someone clicks into a field so they can see where they are typing */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #6956AD;
+    border-color: #6956AD;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Submit button (Add Task)
+   Matches the purple of the homepage buttons */
+button {
+    margin-top: 22px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6956AD;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #574493;
+}
+
+/* Cancel link next to the button */
+form a {
+    margin-left: 15px;
+    color: #6956AD;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* Task table (My Tasks page)
+   Rounded corners and a soft purple shadow so it looks like a card.
+   border-collapse is "separate" here because rounded corners
+   do not work on a table with collapsed borders. */
+table {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: white;
+    border: 1px solid #EEE9FA;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(105, 86, 173, 0.12);
+}
+
+/* Header row of the table
+   Solid purple with white text so the columns are easy to find */
+th {
+    background-color: #6956AD;
+    color: white;
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding: 16px 18px;
+}
+
+/* Spacing and a thin line between rows */
+td {
+    padding: 16px 18px;
+    border-bottom: 1px solid #EEE9FA;
+    color: #514A63;
+}
+
+/* The first column (task title) is bold so it stands out */
+td:first-child {
+    font-weight: bold;
+    color: #302A40;
+}
+
+/* Remove the line under the last row so it does not double up with the border */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Every second row is a light purple so rows are easier to read across */
+tbody tr:nth-child(even) {
+    background-color: #FAF9FF;
+}
+
+/* Row highlights when the mouse is over it */
+tbody tr:hover {
+    background-color: #F1EDFB;
+}
+
+/* Links inside the table (like edit or delete) look like small buttons */
+td a {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid #6956AD;
+    border-radius: 6px;
+    color: #6956AD;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+td a:hover {
+    background-color: #6956AD;
+    color: white;
+}
+
+/* If a button (like Delete) is inside the table it uses a form,
+   so this removes the white card look and keeps it small in the row */
+td form {
+    display: inline;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+}
+
+td button {
+    margin-top: 0;
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+}
+
+/* Priority labels
+   Small rounded tags. Use class="badge priority-high" on the priority text
+   so Low is green, Medium is yellow and High is red. */
+.badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #EEE9FA;
+    color: #6956AD;
+}
+
+.priority-low {
+    background-color: #E3F4EA;
+    color: #1F7A4D;
+}
+
+.priority-medium {
+    background-color: #FFF1D6;
+    color: #8A5A00;
+}
+
+.priority-high {
+    background-color: #FBE3E3;
+    color: #B3261E;
+}
+
+/* Message shown when there are no tasks yet */
+.empty {
+    text-align: center;
+    color: #625B72;
+    padding: 40px 30px;
+}
+
+/* Adjust the form and table for smaller screens
+   The table scrolls sideways on a phone instead of breaking the page */
+@media (max-width: 600px) {
+    form {
+        margin: 25px 15px;
+        padding: 22px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        margin: 25px 0;
+    }
+}
